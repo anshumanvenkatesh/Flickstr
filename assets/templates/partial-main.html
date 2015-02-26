@@ -1,0 +1,61 @@
+<body>
+<div class="container" style="padding-top: 30px;">
+  <div class="col-md-6" style=" " ng-controller="mainCtrl">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="movie in movies">
+        <span> <img style="height: 50px;width: 50px" ng-src={{movie.poster}}> &nbsp {{movie.title}} &nbsp - &nbsp {{movie.desc}} </span>
+        <button class="btn btn-danger" ng-click="mov_del(movie.id)">Delete</button>
+        <div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-----------------------------------------  Add Movies  ------------------------------------------------------------------>
+
+  <div class="col-md-6" style="padding-bottom: 30px; padding-top: 10px; background-color:rgba(10,10,10,0.2)">
+  <form ng-submit="moviesubmit()">
+    <div class="form-group">
+      <label style="color:rgb(255,255,255)">Movie Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter movie title" ng-model="tempMovies.title">
+      <!--<button ng-click="omdbclick()">Click</button>-->
+    </div>
+    <div class="form-group" ng-click="omdbclick()">
+      <label style="color:rgb(255,255,255)">Comments</label>
+      <input type="text" class="form-control" id="comments" placeholder="Click here to find movie" ng-model="tempMovies.comments" >
+    </div>
+    <div class="form-group">
+      <label style="color:rgb(255,255,255)">Description</label>
+      <textarea class="form-control" id="desc" placeholder="Enter desc" ng-model="tempMovies.desc"></textarea>
+    </div>
+    <div>
+      <label style="color:rgb(255,255,255)">Genre</label>
+      <input type="text" class="form-control" id="genre" placeholder="Enter desc" ng-model="tempMovies.genre">
+    </div>
+    <div>
+      <div>
+        <label style="color:rgb(255,255,255)">Poster</label>
+        </div>
+      <img class="img-thumbnail" ng-src={{tempMovies.poster}}>
+    </div>
+    <div style="padding-top: 10px">
+      <div style="padding-right: 10px; float: right">
+        <button type="submit" class="btn btn-success" >Submit</button>
+      </div>
+    <div>
+    <button class="btn btn-default" ng-click="reset()">Reset</button>
+      </div>
+      </div>
+  </form>
+    </div>
+  <!-------------------------------------------------------------------------------------------------------------------------->
+
+  </div>
+
+
+<!----------------------------------------------  Creating Modal  ------------------------------------------------------------->
+<button class="btn btn-success" ng-click="recommend()">Reccomend Movies</button>
+
+</body>
+

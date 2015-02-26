@@ -1,0 +1,23 @@
+{
+  "name": "flickstr",
+  "version": "0.0.1",
+  "authors": [
+    "V Anshuman <anshumanv@visualbi.com>"
+  ],
+  "description": "Movie Reccomender",
+  "main": "layout.ejs",
+  "keywords": [
+    "Reccomender",
+    "Sails",
+    "Angularjs"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

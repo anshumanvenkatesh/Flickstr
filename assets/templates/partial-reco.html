@@ -1,0 +1,40 @@
+<div ng-controller="recoCtrl">
+<!--  <li class="list-group-item" ng-repeat="rec in reco">
+    <span> <img style="height: 100px;width: 100px" ng-src={{rec.poster}}> &nbsp <h4>{{rec.title}}</h4>
+      <h4>Plot</h4> {{rec.desc}}
+      <h4>Genre</h4> {{rec.genre}}
+    </span>
+    <div>
+
+    </div>
+  </li>-->
+
+  <!--<button class="btn btn-success" ng-click="getMovieDetails()">click</button>-->
+  <!--<button class="btn btn-success" ng-click="show()">click</button>-->
+  <div style="background-color: #ffffff">
+  <table class="table table-bordered table-alternate" style="opacity: 1">
+    <tr>
+      <th colspan="5">
+        <div style="text-align: center"><h1>Movie Recommendations Info</h1></div>
+      </th>
+    </tr>
+    <tr>
+      <th>#</th>
+      <th>Poster</th>
+      <th>Title</th>
+      <th>Plot</th>
+      <th>Genre</th>
+    </tr>
+    <tr ng-repeat="rec in _recomp">
+      <td>{{}}</td>
+      <td><img style="height: 100px;width: 100px" ng-src={{rec.poster}}> </td>
+      <td><h4>{{rec.title}}</h4></td>
+      <td>{{rec.desc}}</td>
+      <td>{{rec.genre}}</td>
+
+    </tr>
+  </table>
+    </div>
+
+</div>
+

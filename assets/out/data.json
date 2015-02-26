@@ -1,0 +1,481 @@
+{
+    "project": {},
+    "files": {
+        "js\\dependencies\\sails.io.js": {
+            "name": "js\\dependencies\\sails.io.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "js\\angular-ui-router.min.js": {
+            "name": "js\\angular-ui-router.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "js\\main.js": {
+            "name": "js\\main.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {},
+    "classitems": [
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 4,
+            "description": "sails.io.js\n------------------------------------------------------------------------\nJavaScript Client (SDK) for communicating with Sails.\n\nNote that this script is completely optional, but it is handy if you're\nusing WebSockets from the browser to talk to your Sails server.\n\nFor tips and documentation, visit:\nhttp://sailsjs.org/#!documentation/reference/BrowserSDK/BrowserSDK.html\n------------------------------------------------------------------------\n\nThis file allows you to send and receive socket.io messages to & from Sails\nby simulating a REST client interface on top of socket.io. It models its API\nafter the $.ajax pattern from jQuery you might already be familiar with.\n\nSo if you're switching from using AJAX to sockets, instead of:\n   `$.post( url, [data], [cb] )`\n\nYou would use:\n   `socket.post( url, [data], [cb] )`",
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 73,
+            "description": "Augment the `io` object passed in with methods for talking and listening\nto one or more Sails backend(s).  Automatically connects a socket and\nexposes it on `io.socket`.  If a socket tries to make requests before it\nis connected, the sails.io.js client will queue it up.",
+            "params": [
+                {
+                    "name": "io",
+                    "description": "",
+                    "type": "SocketIO"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 98,
+            "description": "TmpSocket\n\nA mock Socket used for binding events before the real thing\nhas been instantiated (since we need to use io.connect() to\ninstantiate the real thing, which would kick off the connection\nprocess w/ the server, and we don't necessarily have the valid\nconfiguration to know WHICH SERVER to talk to yet.)",
+            "api": "private",
+            "is_constructor": 1,
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 163,
+            "description": "A little logger for this library to use internally.\nBasically just a wrapper around `console.log` with\nsupport for feature-detection.",
+            "api": "private",
+            "factory": "",
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 212,
+            "description": "_isConnected",
+            "api": "private",
+            "params": [
+                {
+                    "name": "socket",
+                    "description": "",
+                    "type": "Socket"
+                }
+            ],
+            "return": {
+                "description": "whether the socket is connected and able to\n                          communicate w/ the server.",
+                "type": "Boolean"
+            },
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 227,
+            "description": "What is the `requestQueue`?\n\nThe request queue is used to simplify app-level connection logic--\ni.e. so you don't have to wait for the socket to be connected\nto start trying to  synchronize data.",
+            "api": "private",
+            "params": [
+                {
+                    "name": "socket",
+                    "description": "",
+                    "type": "Socket"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 258,
+            "description": "Send an AJAX request.",
+            "params": [
+                {
+                    "name": "opts",
+                    "description": "[optional]",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "XMLHttpRequest"
+            },
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 296,
+            "description": "The JWR (JSON WebSocket Response) received from a Sails server.",
+            "api": "private",
+            "params": [
+                {
+                    "name": "responseCtx",
+                    "description": "=> :body\n        => :statusCode\n        => :headers",
+                    "type": "Object"
+                }
+            ],
+            "is_constructor": 1,
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 331,
+            "api": "private",
+            "params": [
+                {
+                    "name": "socket",
+                    "description": "[description]",
+                    "type": "Socket"
+                },
+                {
+                    "name": "requestCtx",
+                    "description": "[description]",
+                    "type": "Object"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 379,
+            "description": "Simulate a GET request to sails\ne.g.\n   `socket.get('/user/3', Stats.populate)`",
+            "api": "public",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "::    destination URL",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "::    parameters to send with the request [optional]",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "::    callback function to call when finished [optional]",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 407,
+            "description": "Simulate a POST request to sails\ne.g.\n   `socket.post('/event', newMeeting, $spinner.hide)`",
+            "api": "public",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "::    destination URL",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "::    parameters to send with the request [optional]",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "::    callback function to call when finished [optional]",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 435,
+            "description": "Simulate a PUT request to sails\ne.g.\n   `socket.post('/event/3', changedFields, $spinner.hide)`",
+            "api": "public",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "::    destination URL",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "::    parameters to send with the request [optional]",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "::    callback function to call when finished [optional]",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 463,
+            "description": "Simulate a DELETE request to sails\ne.g.\n   `socket.delete('/event', $spinner.hide)`",
+            "api": "public",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "::    destination URL",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "::    parameters to send with the request [optional]",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "::    callback function to call when finished [optional]",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 491,
+            "description": "Simulate an HTTP request to sails\ne.g.\n   `socket.request('/user', newUser, $spinner.hide, 'post')`",
+            "api": "public",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "::    destination URL",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "::    parameters to send with the request [optional]",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "::    callback function to call when finished [optional]",
+                    "type": "Function"
+                },
+                {
+                    "name": "method",
+                    "description": "::    HTTP request method [optional]",
+                    "type": "String"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 526,
+            "description": "Socket.prototype._request\n\nSimulate HTTP over Socket.io.",
+            "api": "private",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "[description]",
+                    "type": "[type]"
+                },
+                {
+                    "name": "cb",
+                    "description": "[description]",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 601,
+            "description": "Override `io.connect` to coerce it into using the io.sails\nconnection URL config, as well as sending identifying information\n(most importantly, the current version of this SDK)",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "[optional]",
+                    "type": "String"
+                },
+                {
+                    "name": "opts",
+                    "description": "[optional]",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Socket"
+            },
+            "class": ""
+        },
+        {
+            "file": "js\\dependencies\\sails.io.js",
+            "line": 713,
+            "description": "'connect' event is triggered when the socket establishes a connection\n successfully.",
+            "class": ""
+        },
+        {
+            "file": "js\\angular-ui-router.min.js",
+            "line": 1,
+            "description": "State-based routing for AngularJS",
+            "version": "v0.2.13",
+            "link": "http://angular-ui.github.com/",
+            "license": "MIT License, http://www.opensource.org/licenses/MIT",
+            "class": ""
+        },
+        {
+            "file": "js\\main.js",
+            "line": 1,
+            "description": "Created by Anshuman V on 2/12/2015.",
+            "class": ""
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:98"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:163"
+        },
+        {
+            "message": "unknown tag: factory",
+            "line": " js\\dependencies\\sails.io.js:163"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:212"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:227"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:296"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:331"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:379"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:407"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:435"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:463"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:491"
+        },
+        {
+            "message": "unknown tag: api",
+            "line": " js\\dependencies\\sails.io.js:526"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " js\\angular-ui-router.min.js:1"
+        },
+        {
+            "message": "unknown tag: link",
+            "line": " js\\angular-ui-router.min.js:1"
+        },
+        {
+            "message": "unknown tag: license",
+            "line": " js\\angular-ui-router.min.js:1"
+        },
+        {
+            "message": "Missing item type\nsails.io.js\n------------------------------------------------------------------------\nJavaScript Client (SDK) for communicating with Sails.\n\nNote that this script is completely optional, but it is handy if you're\nusing WebSockets from the browser to talk to your Sails server.\n\nFor tips and documentation, visit:\nhttp://sailsjs.org/#!documentation/reference/BrowserSDK/BrowserSDK.html\n------------------------------------------------------------------------\n\nThis file allows you to send and receive socket.io messages to & from Sails\nby simulating a REST client interface on top of socket.io. It models its API\nafter the $.ajax pattern from jQuery you might already be familiar with.\n\nSo if you're switching from using AJAX to sockets, instead of:\n   `$.post( url, [data], [cb] )`\n\nYou would use:\n   `socket.post( url, [data], [cb] )`",
+            "line": " js\\dependencies\\sails.io.js:4"
+        },
+        {
+            "message": "Missing item type\nAugment the `io` object passed in with methods for talking and listening\nto one or more Sails backend(s).  Automatically connects a socket and\nexposes it on `io.socket`.  If a socket tries to make requests before it\nis connected, the sails.io.js client will queue it up.",
+            "line": " js\\dependencies\\sails.io.js:73"
+        },
+        {
+            "message": "Missing item type\nTmpSocket\n\nA mock Socket used for binding events before the real thing\nhas been instantiated (since we need to use io.connect() to\ninstantiate the real thing, which would kick off the connection\nprocess w/ the server, and we don't necessarily have the valid\nconfiguration to know WHICH SERVER to talk to yet.)",
+            "line": " js\\dependencies\\sails.io.js:98"
+        },
+        {
+            "message": "Missing item type\nA little logger for this library to use internally.\nBasically just a wrapper around `console.log` with\nsupport for feature-detection.",
+            "line": " js\\dependencies\\sails.io.js:163"
+        },
+        {
+            "message": "Missing item type\n_isConnected",
+            "line": " js\\dependencies\\sails.io.js:212"
+        },
+        {
+            "message": "Missing item type\nWhat is the `requestQueue`?\n\nThe request queue is used to simplify app-level connection logic--\ni.e. so you don't have to wait for the socket to be connected\nto start trying to  synchronize data.",
+            "line": " js\\dependencies\\sails.io.js:227"
+        },
+        {
+            "message": "Missing item type\nSend an AJAX request.",
+            "line": " js\\dependencies\\sails.io.js:258"
+        },
+        {
+            "message": "Missing item type\nThe JWR (JSON WebSocket Response) received from a Sails server.",
+            "line": " js\\dependencies\\sails.io.js:296"
+        },
+        {
+            "message": "Missing item type",
+            "line": " js\\dependencies\\sails.io.js:331"
+        },
+        {
+            "message": "Missing item type\nSimulate a GET request to sails\ne.g.\n   `socket.get('/user/3', Stats.populate)`",
+            "line": " js\\dependencies\\sails.io.js:379"
+        },
+        {
+            "message": "Missing item type\nSimulate a POST request to sails\ne.g.\n   `socket.post('/event', newMeeting, $spinner.hide)`",
+            "line": " js\\dependencies\\sails.io.js:407"
+        },
+        {
+            "message": "Missing item type\nSimulate a PUT request to sails\ne.g.\n   `socket.post('/event/3', changedFields, $spinner.hide)`",
+            "line": " js\\dependencies\\sails.io.js:435"
+        },
+        {
+            "message": "Missing item type\nSimulate a DELETE request to sails\ne.g.\n   `socket.delete('/event', $spinner.hide)`",
+            "line": " js\\dependencies\\sails.io.js:463"
+        },
+        {
+            "message": "Missing item type\nSimulate an HTTP request to sails\ne.g.\n   `socket.request('/user', newUser, $spinner.hide, 'post')`",
+            "line": " js\\dependencies\\sails.io.js:491"
+        },
+        {
+            "message": "Missing item type\nSocket.prototype._request\n\nSimulate HTTP over Socket.io.",
+            "line": " js\\dependencies\\sails.io.js:526"
+        },
+        {
+            "message": "Missing item type\nOverride `io.connect` to coerce it into using the io.sails\nconnection URL config, as well as sending identifying information\n(most importantly, the current version of this SDK)",
+            "line": " js\\dependencies\\sails.io.js:601"
+        },
+        {
+            "message": "Missing item type\n'connect' event is triggered when the socket establishes a connection\n successfully.",
+            "line": " js\\dependencies\\sails.io.js:713"
+        },
+        {
+            "message": "Missing item type\nState-based routing for AngularJS",
+            "line": " js\\angular-ui-router.min.js:1"
+        },
+        {
+            "message": "Missing item type\nCreated by Anshuman V on 2/12/2015.",
+            "line": " js\\main.js:1"
+        }
+    ]
+}
